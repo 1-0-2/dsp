@@ -1,0 +1,124 @@
+M=25;
+t=(0:1:M-1);
+A=ones(1,M);
+stem(t,A,'g');
+xlabel('-------->n<--------');
+ylabel('Amplitude------>');
+title('Rectangular window with M=25 102206227');
+figure
+[H,w]=freqz(A,1,1024);
+wN=w./(2*pi);
+HN=abs(H)./max(abs(H));
+plot(wN,20.*log10(HN),'b');
+grid
+xlabel('Normalised Frequence --------->');
+ylabel('Normalised Magnitude response(dB)------>');
+title('102206')
+hold on 
+
+M=49;
+t=(0:1:M-1);
+AH = ones(1,M);
+[H,w]=freqz(AH,1,1024);
+wN=w./(2*pi);
+HN = abs(H)./max(abs(H));
+plot(wN,20.*log10(HN),'r');
+hold off
+legend('M=25','M=49');
+
+% Hamming Window for M=25 using the Hamming window formula
+M = 25;
+t = (0:1:M-1);
+A = 0.54 - 0.46 * cos(2 * pi * t / (M-1)); % Hamming window formula
+stem(t, A, 'g');
+xlabel('-------->n<--------');
+ylabel('Amplitude------>');
+title('Hamming window with M=25 (102206227)');
+figure
+[H, w] = freqz(A, 1, 1024);
+wN = w./(2*pi);
+HN = abs(H)./max(abs(H));
+plot(wN, 20.*log10(HN), 'b');
+grid
+xlabel('Normalized Frequency --------->');
+ylabel('Normalized Magnitude response (dB)------>');
+title('Frequency Response of Hamming Window (102206227)');
+hold on 
+
+% Hamming Window for M=49 using the Hamming window formula
+M = 49;
+t = (0:1:M-1);
+AH = 0.54 - 0.46 * cos(2 * pi * t / (M-1)); % Hamming window formula
+[H, w] = freqz(AH, 1, 1024);
+wN = w./(2*pi);
+HN = abs(H)./max(abs(H));
+plot(wN, 20.*log10(HN), 'r');
+hold off
+legend('M=25', 'M=49');
+
+
+% Hanning Window for M=25 using the Hanning window formula
+M = 25;
+t = (0:1:M-1);
+A = 0.5 - 0.5 * cos(2 * pi * t / (M-1)); % Hanning window formula
+stem(t, A, 'g');
+xlabel('-------->n<--------');
+ylabel('Amplitude------>');
+title('Hanning window with M=25 (102206227)');
+figure
+[H, w] = freqz(A, 1, 1024);
+wN = w./(2*pi);
+HN = abs(H)./max(abs(H));
+plot(wN, 20.*log10(HN), 'b');
+grid
+xlabel('Normalized Frequency --------->');
+ylabel('Normalized Magnitude response (dB)------>');
+title('Frequency Response of Hanning Window (102206227)');
+hold on 
+
+% Hanning Window for M=49 using the Hanning window formula
+M = 49;
+t = (0:1:M-1);
+AH = 0.5 - 0.5 * cos(2 * pi * t / (M-1)); % Hanning window formula
+[H, w] = freqz(AH, 1, 1024);
+wN = w./(2*pi);
+HN = abs(H)./max(abs(H));
+plot(wN, 20.*log10(HN), 'r');
+hold off
+legend('M=25', 'M=49');
+
+
+% Triangular Window for M=25 using the Triangular window formula
+M = 25;
+t = (0:1:M-1);
+A = 1 - abs(2*t/(M-1) - 1); % Triangular (Bartlett) window formula
+stem(t, A, 'g');
+xlabel('-------->n<--------');
+ylabel('Amplitude------>');
+title('Triangular window with M=25 (102206227)');
+figure
+[H, w] = freqz(A, 1, 1024);
+wN = w./(2*pi);
+HN = abs(H)./max(abs(H));
+plot(wN, 20.*log10(HN), 'b');
+grid
+xlabel('Normalized Frequency --------->');
+ylabel('Normalized Magnitude response (dB)------>');
+title('Frequency Response of Triangular Window (102206227)');
+hold on 
+
+% Triangular Window for M=49 using the Triangular window formula
+M = 49;
+t = (0:1:M-1);
+AH = 1 - abs(2*t/(M-1) - 1); % Triangular (Bartlett) window formula
+[H, w] = freqz(AH, 1, 1024);
+wN = w./(2*pi);
+HN = abs(H)./max(abs(H));
+plot(wN, 20.*log10(HN), 'r');
+hold off
+legend('M=25', 'M=49');
+
+
+
+
+
