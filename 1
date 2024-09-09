@@ -1,0 +1,47 @@
+function [x,y] = Signum_Exp1c(nl,n2)
+x=[nl:n2];
+y=[x>0]-[x<0]
+stem(x,y);
+title('102206127 Signum')
+figure
+plot(x,y)
+grid
+
+function [y]=square_Exp1b(UL,f,d)
+%square wave with duty cycle
+%UL=xpi
+t=0:0.0001:UL;
+y=square(2*pi*t*f,d);
+plot(t,y,'b')
+grid
+figure
+stem(t,y,'r')
+grid
+
+function[x,n]= UnitImpulse_Exp1a(n0,n1,n2)
+%n0 in the desired delay
+%n1 is the starting sample point
+%n2 is the ending sample point
+n=[n1:n2];
+x=[(n-n0)== 0];
+stem(n,x,'r');
+grid
+title('Unit-pulse signal in the discrete-time domain 102206127');
+xlabel('\br <--- Sample-numbuk (2) ->')
+
+
+function [x,n] = UnitStep_Exp1d(n0,n1,n2)
+%n0 is the desired delay
+%n1 is the starting sample number
+%n2 is the ending sample number
+n= [n1:n2];
+x=[(n-n0)>= 0];
+stem (n, x,'r')
+grid
+%Unit-step function/signal in the discrete-time domain
+title('Unit-step signal in the disprete-time domain 102206227')
+xlabel('\bf <--- Sample-number (n) --->')
+ylabel('\bf Amplitude --->')
+ylabel('\bf Amplitude --->')
+
+
